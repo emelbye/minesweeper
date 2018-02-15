@@ -1,0 +1,14 @@
+<button (click)="startGame()">New Game</button>
+<input type="radio" value="0" name="level" [(ngModel)]="level"> Beginner
+<input type="radio" value="1" name="level" [(ngModel)]="level"> Intermediate
+<input type="radio" value="2" name="level" [(ngModel)]="level"> Advanced
+<input type="radio" value="3" name="level" [(ngModel)]="level"> Extreme
+<input type="radio" value="4" name="level" [(ngModel)]="level"> Insane
+
+<h1><i class="fa fa-bomb" aria-hidden="true"></i> {{game.minesLeft}}</h1>
+
+<div class="flex-grid" *ngFor="let row of game.boxes">
+    <app-sp-box class="col" *ngFor="let box of row"
+        [box]="box" (onBoxClicked)="onBoxClicked($event)" (onBoxRightClicked)="onBoxRightClicked($event)">
+    </app-sp-box>
+</div>

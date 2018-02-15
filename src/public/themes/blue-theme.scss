@@ -1,0 +1,48 @@
+@import "./base-theme.scss";
+
+.blue-theme {
+   
+    %box {
+        background-color:#002f7c;
+    }
+    
+    .BoxHide {
+        @include setBoxShadow(2px 2px 2px 2px,#020059);
+    }
+    
+    .BoxShow {
+        background-color:#001233;
+        @include setBoxShadow(inset 0 0 10px,#000000);
+    }
+    
+    .BoxFlag {
+        @include setBoxShadow(2px 2px 2px 2px,#002f7c);
+    }
+    
+    .BoxBomb {
+        @include setBoxShadow(inset 0 0 10px, #3a0000);
+        background-color: #a50000;
+    }
+    
+    button {
+        color: white;
+        background-color: #002f7c;
+    }
+
+    ul {
+        background-color: #020059;
+    }
+
+    li a {
+        color: white;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #000000;
+    }
+
+    .active {
+        background-color: #002f7c;
+    }
+
+}

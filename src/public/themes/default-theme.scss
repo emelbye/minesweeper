@@ -1,0 +1,50 @@
+@import "./base-theme.scss";
+
+.default-theme {
+   
+    %box {
+        background-color: gainsboro;
+    }
+    
+    .BoxHide {
+        @include setBoxShadow(2px 2px 2px 2px,black);
+    }
+    
+    .BoxShow {
+        background-color:lightgrey;
+        @include setBoxShadow(inset 0 0 10px,black);
+    }
+    
+    .BoxFlag {
+        @include setBoxShadow(2px 2px 2px 2px,black);
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    
+    .BoxBomb {
+        @include setBoxShadow(inset 0 0 10px,darkred);
+        background-color: red;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    button {
+        color: #282828;
+        background-color: lightgrey;
+    }
+
+    ul {
+        background-color: gainsboro;
+    }
+
+    li a {
+        color: #282828;
+    }
+
+    li a:hover:not(.active) {
+        background-color: lightgrey;
+    }
+
+    .active {
+        background-color: #9f9fa3;
+    }
+
+}

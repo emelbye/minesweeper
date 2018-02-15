@@ -1,0 +1,13 @@
+<div [className]="box.status" (click)="boxClicked()" (contextmenu)="onRightClick()">
+  <div *ngIf="box.status == 'BoxShow' || box.status == 'BoxBomb'">
+    <div *ngIf="!box.hasMine && box.minesAround > 0">
+        <span [className]="classMinesAround">{{box.minesAround}}</span>
+    </div>
+    <div *ngIf="box.hasMine">
+        <i class="fa fa-bomb" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div *ngIf="box.status == 'BoxFlag'">
+    <i class="fa fa-flag" aria-hidden="true"></i>
+  </div>
+</div>

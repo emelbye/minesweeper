@@ -1,0 +1,42 @@
+<span class="info">Start/Join Game >></span>
+Game Key <input type="text" [(ngModel)]="gameKey">
+<button (click)="startGame()">Start</button> 
+<button (click)="joinGame()">Join</button> 
+<input type="radio" value="0" name="level" [(ngModel)]="level"> Beginner 
+<input type="radio" value="1" name="level" [(ngModel)]="level"> Intermediate 
+<input type="radio" value="2" name="level" [(ngModel)]="level"> Advanced 
+<input type="radio" value="3" name="level" [(ngModel)]="level"> Extreme 
+<input type="radio" value="4" name="level" [(ngModel)]="level"> Insane 
+
+<div *ngIf="games">
+    <h5>Games</h5>
+    <div *ngFor="let game of games">
+        <div>
+            Key: {{game.key }} | Players: {{game.players.length}} 
+        </div>
+    </div>
+</div>
+
+<div *ngIf="game">
+    <h5>Players</h5>
+    <div *ngFor="let player of game.players">
+        <div [style.background-color]="player.color">
+            Player: {{ player.name }} | 
+            Correct: {{ player.correct }} | 
+            Incorrect: {{ player.incorrect }} | 
+            Bombs: {{ player.bombs }} >>>> 
+            Score: {{ player.correct - (( player.incorrect +  player.bombs )*2 ) }}
+        </div>
+    </div>
+
+    <h1><i class="fa fa-bomb" aria-hidden="true"></i> {{ game.minesLeft }}</h1>
+
+    <div class="flex-grid" *ngFor="let row of game.boxes">
+        <app-mp-box class="col" *ngFor="let box of row"
+            [box]="box" (onBoxClicked)="onBoxClicked($event)" (onBoxRightClicked)="onBoxRightClicked($event)">
+        </app-mp-box>
+    </div>
+</div>
+
+
+

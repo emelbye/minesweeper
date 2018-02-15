@@ -1,0 +1,118 @@
+@mixin setBoxShadow($shadow, $color) {
+    -moz-box-shadow:    $shadow $color;
+    -webkit-box-shadow: $shadow $color;
+    box-shadow:         $shadow $color;
+}
+
+%box {
+    padding: 10px; 
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+.BoxHide {
+    @extend %box;
+}
+
+.BoxShow {
+    @extend %box;
+}
+
+.BoxFlag {
+    @extend %box;
+    color: red;
+}
+
+.BoxBomb {
+    @extend %box;
+}
+
+%text {
+    font-weight: bold;
+}
+
+.mine_1{
+    @extend %text;
+    color: blue;
+}
+
+.mine_2{
+    @extend %text;
+    color: green;
+}
+
+.mine_3{
+    @extend %text;
+    color: olive;
+}
+
+.mine_4{
+    @extend %text;
+    color: darkblue;
+}
+
+.mine_5{
+    @extend %text;
+    color:red;
+}
+
+.mine_6{
+    @extend %text;
+    color: darkblue;
+}
+
+.mine_7{
+    @extend %text;
+    color: darkblue;
+}
+
+.mine_8{
+    @extend %text;
+    color: darkblue;
+}
+
+button {
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    -moz-box-shadow:    1px 1px 1px 1px #000000;
+    -webkit-box-shadow: 1px 1px 1px 1px  #000000;
+    box-shadow:         1px 1px 1px 1px #000000;
+}
+    
+.info {
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
